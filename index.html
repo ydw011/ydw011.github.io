@@ -16,11 +16,12 @@
 <body class="home-body">
   <div class="page-shell">
     <header class="hero-copy">
-      <p class="eyebrow">Portfolio Universe</p>
-      <h1>Ideas, work, and identity connected like a living map.</h1>
+      <p class="eyebrow">Orbital Portfolio</p>
+      <h1>Space robotics, origami thinking, and ideas linked in orbit.</h1>
       <p class="hero-text">
-        Explore DongWook Yang through a branching mind map. Each node opens a different part of the story:
-        research, projects, hobbies, social presence, and the journey that ties them together.
+        Explore DongWook Yang through a branching map inspired by constellations and orbital paths.
+        Each node opens a different part of the story, from research directions to projects, hobbies,
+        social links, and the journey behind the work.
       </p>
     </header>
 
@@ -36,17 +37,17 @@
       <section class="mindmap">
         <button class="node center-node" type="button" data-target="journey.html" style="--x: 50%; --y: 50%;">
           <span class="node-label">DongWook Yang</span>
-          <span class="node-meta">Curious builder and researcher</span>
+          <span class="node-meta">Space robotics and origami inspired researcher</span>
         </button>
 
         <button class="node node-research" type="button" data-target="research.html" style="--x: 18%; --y: 16%;">
           <span class="node-label">Research</span>
-          <span class="node-meta">Questions, experiments, insight</span>
+          <span class="node-meta">Space robotics, origami structures, insight</span>
         </button>
 
         <button class="node node-projects" type="button" data-target="projects.html" style="--x: 82%; --y: 16%;">
           <span class="node-label">Projects</span>
-          <span class="node-meta">Things I design and build</span>
+          <span class="node-meta">Systems, prototypes, experiments</span>
         </button>
 
         <button class="node node-social" type="button" data-target="social.html" style="--x: 87%; --y: 62%;">
@@ -65,6 +66,40 @@
         </button>
       </section>
     </main>
+
+    <section class="guestbook-panel" aria-labelledby="guestbook-title">
+      <div class="guestbook-copy">
+        <p class="eyebrow">Guestbook</p>
+        <h2 id="guestbook-title">Leave a small note in this orbit.</h2>
+        <p>
+          Visitors can leave a short message here. For this GitHub Pages version, entries are stored locally
+          in the visitor's browser to keep the site light and simple.
+        </p>
+      </div>
+
+      <form class="guestbook-form" id="guestbook-form">
+        <label>
+          <span>Name</span>
+          <input id="guest-name" name="name" type="text" maxlength="40" placeholder="Your name" required>
+        </label>
+        <label>
+          <span>Message</span>
+          <textarea id="guest-message" name="message" rows="4" maxlength="220" placeholder="Write a short message" required></textarea>
+        </label>
+        <div class="guestbook-actions">
+          <button class="guestbook-submit" type="submit">Add note</button>
+          <p class="guestbook-status" id="guestbook-status" aria-live="polite"></p>
+        </div>
+      </form>
+
+      <div class="guestbook-list-wrap">
+        <div class="guestbook-list-header">
+          <h3>Recent Notes</h3>
+          <button class="guestbook-clear" id="guestbook-clear" type="button">Clear local notes</button>
+        </div>
+        <div class="guestbook-list" id="guestbook-list"></div>
+      </div>
+    </section>
 
     <footer class="home-footer">
       <p>Click any connected node to zoom into that part of the portfolio.</p>
