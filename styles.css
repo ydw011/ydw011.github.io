@@ -572,6 +572,11 @@ h2 {
   gap: 24px;
 }
 
+.project-stack {
+  display: grid;
+  gap: 24px;
+}
+
 .focus-card {
   min-height: auto;
 }

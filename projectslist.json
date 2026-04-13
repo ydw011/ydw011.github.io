@@ -1,0 +1,14 @@
+[
+  {
+    "status": "Featured",
+    "title": "Project Title Placeholder",
+    "meta": "Project type - Year",
+    "summary": "Replace this entry with your actual project description. Add new objects to this file and the list on the Projects page will grow automatically."
+  },
+  {
+    "status": "Add New Project Here",
+    "title": "Another Project Placeholder",
+    "meta": "Category - Year",
+    "summary": "Keep adding project objects in projectslist.json so the project list continues downward over time."
+  }
+]

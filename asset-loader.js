@@ -1,4 +1,4 @@
-const ASSET_VERSION = "20";
+const ASSET_VERSION = "21";
 
 const styleLink = document.createElement("link");
 styleLink.rel = "stylesheet";
@@ -6,7 +6,7 @@ styleLink.href = `styles.css?v=${ASSET_VERSION}`;
 document.head.appendChild(styleLink);
 
 const currentPage = window.location.pathname.split("/").pop() || "index.html";
-const pagesWithAppScript = new Set(["", "index.html", "research.html"]);
+const pagesWithAppScript = new Set(["", "index.html", "research.html", "projects.html"]);
 
 if (pagesWithAppScript.has(currentPage)) {
   const appScript = document.createElement("script");

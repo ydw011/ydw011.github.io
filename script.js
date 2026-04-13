@@ -5,6 +5,7 @@ const shakeNodes = document.querySelectorAll(".mindmap .node:not(.center-node)")
 const centerNodeMeta = centerNode?.querySelector(".node-meta");
 const rocketEasterEgg = document.querySelector("#rocket-easter-egg");
 const publicationList = document.querySelector("#publication-list");
+const projectList = document.querySelector("#project-list");
 
 nodes.forEach((node) => {
   node.addEventListener("click", () => {
@@ -34,7 +35,7 @@ if (centerNode && mindmapStage && shakeNodes.length > 0) {
     shakeNodes.forEach((node) => node.classList.add("is-shaking"));
     rocketEasterEgg?.classList.add("is-launching");
     if (centerNodeMeta) {
-      centerNodeMeta.textContent = "Orbital resonance activated";
+      centerNodeMeta.textContent = "Magnificent desolation! - Buzz Aldrin";
     }
 
     window.setTimeout(() => {
@@ -94,6 +95,56 @@ if (publicationList) {
           <p class="publication-status">Load Error</p>
           <h3>Publication data could not be loaded</h3>
           <p class="publication-summary">Check publications.json and make sure the site is opened through GitHub Pages or a local server.</p>
+        </article>
+      `;
+    });
+}
+
+if (projectList) {
+  fetch("projectslist.json")
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error("Failed to load project data.");
+      }
+
+      return response.json();
+    })
+    .then((projects) => {
+      if (!Array.isArray(projects) || projects.length === 0) {
+        projectList.innerHTML = `
+          <article class="publication-card">
+            <p class="publication-status">No Projects Yet</p>
+            <h3>Add your first project in projectslist.json</h3>
+            <p class="publication-summary">This list will update automatically when you add project objects to the data file.</p>
+          </article>
+        `;
+        return;
+      }
+
+      projectList.innerHTML = projects
+        .map((project) => {
+          const status = escapeHtml(project.status || "Project");
+          const title = escapeHtml(project.title || "Untitled project");
+          const meta = escapeHtml(project.meta || "");
+          const summary = escapeHtml(project.summary || "");
+
+          return `
+            <article class="publication-card">
+              <p class="publication-status">${status}</p>
+              <h3>${title}</h3>
+              <p class="publication-meta">${meta}</p>
+              <p class="publication-summary">${summary}</p>
+            </article>
+          `;
+        })
+        .join("");
+    })
+    .catch(() => {
+      projectList.innerHTML = `
+        <article class="publication-card">
+          <p class="publication-status">Load Error</p>
+          <h3>Project data could not be loaded</h3>
+          <p class="publication-summary">Check projectslist.json and make sure the site is opened through GitHub Pages or a local server.</p>
         </article>
       `;
     });
