@@ -456,8 +456,18 @@ h2 {
   height: 28px;
 }
 
-.icon-scholar {
-  color: #8ce4ff;
+.logo-frame {
+  overflow: hidden;
+  padding: 10px;
+}
+
+.platform-logo {
+  width: 100%;
+  height: 100%;
+  max-width: 34px;
+  max-height: 34px;
+  object-fit: contain;
+  display: block;
 }
 
 .social-grid {
