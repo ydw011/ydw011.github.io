@@ -349,6 +349,40 @@ h2 {
   min-height: 220px;
 }
 
+.talk-panel {
+  display: grid;
+  gap: 20px;
+}
+
+.talk-intro,
+.talk-thread-wrap {
+  padding: 28px;
+  border: 1px solid var(--stroke);
+  border-radius: 32px;
+  background:
+    radial-gradient(circle at top right, rgba(138, 180, 255, 0.14), transparent 20%),
+    linear-gradient(180deg, rgba(4, 10, 20, 0.94), rgba(5, 10, 18, 0.9));
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(16px);
+}
+
+.talk-intro h2 {
+  margin-top: 4px;
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(2rem, 3.2vw, 3rem);
+  line-height: 1.02;
+}
+
+.talk-note {
+  margin: 14px 0 0;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.talk-thread-wrap {
+  min-height: 720px;
+}
+
 .detail-shell {
   max-width: 1120px;
   margin: 0 auto;
@@ -422,6 +456,10 @@ h2 {
     grid-template-columns: 1fr;
   }
 
+  .talk-thread-wrap {
+    min-height: 620px;
+  }
+
   .node {
     width: min(250px, 72vw);
   }
@@ -489,6 +527,11 @@ h2 {
   }
 
   .guestbook-panel {
+    padding: 18px;
+  }
+
+  .talk-intro,
+  .talk-thread-wrap {
     padding: 18px;
   }
 

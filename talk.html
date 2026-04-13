@@ -22,35 +22,26 @@
       </p>
     </section>
 
-    <section class="guestbook-panel" aria-labelledby="talk-thread-title">
-      <div class="guestbook-copy">
-        <p class="eyebrow">Shared Notes</p>
-        <h2 id="talk-thread-title">A small orbit for messages and thoughts.</h2>
-        <p>
-          If you would like to say hello, share an impression, or leave a short message, this page is the place.
-          The comments are public and visible to everyone who visits.
+    <section class="talk-panel" aria-labelledby="talk-thread-title">
+      <div class="talk-intro">
+        <p class="eyebrow">How It Works</p>
+        <h2 id="talk-thread-title">Sign in with GitHub and leave a message below.</h2>
+        <p class="talk-note">
+          This space is shared, so messages written here can be seen by other visitors too. If the thread takes a
+          moment to appear, give it a second to load.
         </p>
       </div>
 
-      <div class="guestbook-guide">
-        <div class="guestbook-guide-card">
-          <h3>How To Join</h3>
-          <p>Sign in with GitHub and write directly in the shared thread below.</p>
-        </div>
-        <div class="guestbook-guide-card">
-          <h3>What It Is</h3>
-          <p>This is a portfolio talk space for greetings, thoughts, and lightweight conversation.</p>
-        </div>
-      </div>
-
-      <div class="guestbook-list-wrap">
-        <div class="guestbook-list-header">
-          <h3>Talk Thread</h3>
-        </div>
-        <p class="guestbook-note">
-          If the widget takes a moment to appear, give the page a second to load the GitHub comment thread.
-        </p>
-        <div class="guestbook-thread" id="guestbook-thread"></div>
+      <div class="talk-thread-wrap">
+        <script
+          src="https://utteranc.es/client.js"
+          repo="ydw011/ydw011.github.io"
+          issue-term="pathname"
+          label="guestbook"
+          theme="github-dark"
+          crossorigin="anonymous"
+          async
+        ></script>
       </div>
     </section>
   </div>
