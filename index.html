@@ -12,7 +12,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Cormorant+Garamond:wght@600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=4">
+  <script src="asset-loader.js"></script>
 </head>
 <body class="home-body">
   <div class="page-shell">
@@ -72,34 +72,32 @@
     <section class="guestbook-panel" id="guestbook" aria-labelledby="guestbook-title">
       <div class="guestbook-copy">
         <p class="eyebrow">Guestbook</p>
-        <h2 id="guestbook-title">Leave a small note in this orbit.</h2>
+        <h2 id="guestbook-title">Leave a shared note in this orbit.</h2>
         <p>
-          Visitors can leave a short message here. For this GitHub Pages version, entries are stored locally
-          in the visitor's browser to keep the site light and simple.
+          This guestbook is shared across visitors. Anyone with a GitHub account can leave a message,
+          and everyone else can read it on the page.
         </p>
       </div>
 
-      <form class="guestbook-form" id="guestbook-form">
-        <label>
-          <span>Name</span>
-          <input id="guest-name" name="name" type="text" maxlength="40" placeholder="Your name" required>
-        </label>
-        <label>
-          <span>Message</span>
-          <textarea id="guest-message" name="message" rows="4" maxlength="220" placeholder="Write a short message" required></textarea>
-        </label>
-        <div class="guestbook-actions">
-          <button class="guestbook-submit" type="submit">Add note</button>
-          <p class="guestbook-status" id="guestbook-status" aria-live="polite"></p>
+      <div class="guestbook-guide">
+        <div class="guestbook-guide-card">
+          <h3>Shared Notes</h3>
+          <p>Messages are no longer stored only in one browser. They are shown publicly to other visitors too.</p>
         </div>
-      </form>
+        <div class="guestbook-guide-card">
+          <h3>How To Write</h3>
+          <p>Visitors can sign in with GitHub and leave a short message directly in the guestbook thread below.</p>
+        </div>
+      </div>
 
       <div class="guestbook-list-wrap">
         <div class="guestbook-list-header">
-          <h3>Recent Notes</h3>
-          <button class="guestbook-clear" id="guestbook-clear" type="button">Admin clear notes</button>
+          <h3>Shared Guestbook</h3>
         </div>
-        <div class="guestbook-list" id="guestbook-list"></div>
+        <p class="guestbook-note">
+          If the guestbook takes a moment to appear, wait briefly for the GitHub comment widget to load.
+        </p>
+        <div class="guestbook-thread" id="guestbook-thread"></div>
       </div>
     </section>
 
@@ -107,7 +105,5 @@
       <p>Click any connected node to zoom into that part of the portfolio.</p>
     </footer>
   </div>
-
-  <script src="script.js?v=4"></script>
 </body>
 </html>
