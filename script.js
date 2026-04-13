@@ -77,11 +77,25 @@ if (publicationList) {
           const title = escapeHtml(publication.title || "Untitled publication");
           const meta = escapeHtml(publication.meta || "");
           const summary = escapeHtml(publication.summary || "");
+          const link = typeof publication.link === "string" ? publication.link.trim() : "";
+          const safeLink = escapeAttribute(link);
+          const linkButton = link
+            ? `
+              <a class="publication-file-link" href="${safeLink}" target="_blank" rel="noreferrer" aria-label="Open paper file for ${title}">
+                <img class="publication-file-icon" src="image/file.png" alt="">
+              </a>
+            `
+            : "";
 
           return `
             <article class="publication-card">
-              <p class="publication-status">${status}</p>
-              <h3>${title}</h3>
+              <div class="publication-head">
+                <div class="publication-heading-text">
+                  <p class="publication-status">${status}</p>
+                  <h3>${title}</h3>
+                </div>
+                ${linkButton}
+              </div>
               <p class="publication-meta">${meta}</p>
               <p class="publication-summary">${summary}</p>
             </article>
@@ -157,4 +171,13 @@ function escapeHtml(value) {
     .replaceAll(">", "&gt;")
     .replaceAll('"', "&quot;")
     .replaceAll("'", "&#39;");
+}
+
+function escapeAttribute(value) {
+  return String(value)
+    .replaceAll("&", "&amp;")
+    .replaceAll('"', "&quot;")
+    .replaceAll("'", "&#39;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;");
 }
