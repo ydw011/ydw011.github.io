@@ -524,6 +524,11 @@ h2 {
   gap: 18px;
 }
 
+.publication-list {
+  display: grid;
+  gap: 18px;
+}
+
 .section-heading h2 {
   font-size: clamp(2rem, 3vw, 2.7rem);
   line-height: 1.02;

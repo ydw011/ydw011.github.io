@@ -1,0 +1,14 @@
+[
+  {
+    "status": "Featured",
+    "title": "Paper Title Placeholder",
+    "meta": "Author list - Conference or Journal - Year",
+    "summary": "Replace this entry with your actual publication information. Add new objects to this file and the list on the Research page will grow automatically."
+  },
+  {
+    "status": "Add New Paper Here",
+    "title": "Another Paper Placeholder",
+    "meta": "Author list - Venue - Year",
+    "summary": "Keep adding publication objects in publications.json so the paper list continues downward over time."
+  }
+]

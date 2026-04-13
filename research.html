@@ -13,12 +13,6 @@
 <body class="detail-body">
   <div class="detail-shell">
     <a class="back-link" href="index.html">Back to mind map</a>
-    <a class="icon-link scholar-link" href="https://scholar.google.com/citations?user=3fk-jnwAAAAJ&hl=ko" target="_blank" rel="noreferrer" aria-label="Open Google Scholar profile">
-      <span class="icon-mark logo-frame">
-        <img class="platform-logo" src="logo_googlescholar.png" alt="Google Scholar logo">
-      </span>
-      <span>Google Scholar</span>
-    </a>
 
     <section class="detail-hero">
       <p class="eyebrow">Research</p>
@@ -30,6 +24,13 @@
     </section>
 
     <section class="research-stack">
+      <a class="icon-link scholar-link" href="https://scholar.google.com/citations?user=3fk-jnwAAAAJ&hl=ko" target="_blank" rel="noreferrer" aria-label="Open Google Scholar profile">
+        <span class="icon-mark logo-frame">
+          <img class="platform-logo" src="logo_googlescholar.png" alt="Google Scholar logo">
+        </span>
+        <span>Google Scholar</span>
+      </a>
+
       <article class="detail-card focus-card">
         <h2>Focus Areas</h2>
         <p>
@@ -43,25 +44,7 @@
           <p class="eyebrow">Publications</p>
           <h2 id="publication-title">Paper List</h2>
         </div>
-
-        <article class="publication-card">
-          <p class="publication-status">Add New Paper Here</p>
-          <h3>Paper Title Placeholder</h3>
-          <p class="publication-meta">Author list - Conference or Journal - Year</p>
-          <p class="publication-summary">
-            Replace this card with your actual publication information. You can duplicate this block downward
-            as you add more papers.
-          </p>
-        </article>
-
-        <article class="publication-card">
-          <p class="publication-status">Add New Paper Here</p>
-          <h3>Another Paper Placeholder</h3>
-          <p class="publication-meta">Author list - Venue - Year</p>
-          <p class="publication-summary">
-            Keep stacking additional paper cards in this section so the publication list can continue downward over time.
-          </p>
-        </article>
+        <div class="publication-list" id="publication-list"></div>
       </section>
     </section>
   </div>

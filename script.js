@@ -1,4 +1,5 @@
 const nodes = document.querySelectorAll(".node[data-target]");
+const publicationList = document.querySelector("#publication-list");
 
 nodes.forEach((node) => {
   node.addEventListener("click", () => {
@@ -15,3 +16,62 @@ nodes.forEach((node) => {
     }, 260);
   });
 });
+
+if (publicationList) {
+  fetch("publications.json")
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error("Failed to load publication data.");
+      }
+
+      return response.json();
+    })
+    .then((publications) => {
+      if (!Array.isArray(publications) || publications.length === 0) {
+        publicationList.innerHTML = `
+          <article class="publication-card">
+            <p class="publication-status">No Publications Yet</p>
+            <h3>Add your first paper in publications.json</h3>
+            <p class="publication-summary">This list will update automatically when you add publication objects to the data file.</p>
+          </article>
+        `;
+        return;
+      }
+
+      publicationList.innerHTML = publications
+        .map((publication) => {
+          const status = escapeHtml(publication.status || "Publication");
+          const title = escapeHtml(publication.title || "Untitled publication");
+          const meta = escapeHtml(publication.meta || "");
+          const summary = escapeHtml(publication.summary || "");
+
+          return `
+            <article class="publication-card">
+              <p class="publication-status">${status}</p>
+              <h3>${title}</h3>
+              <p class="publication-meta">${meta}</p>
+              <p class="publication-summary">${summary}</p>
+            </article>
+          `;
+        })
+        .join("");
+    })
+    .catch(() => {
+      publicationList.innerHTML = `
+        <article class="publication-card">
+          <p class="publication-status">Load Error</p>
+          <h3>Publication data could not be loaded</h3>
+          <p class="publication-summary">Check publications.json and make sure the site is opened through GitHub Pages or a local server.</p>
+        </article>
+      `;
+    });
+}
+
+function escapeHtml(value) {
+  return String(value)
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;")
+    .replaceAll('"', "&quot;")
+    .replaceAll("'", "&#39;");
+}
