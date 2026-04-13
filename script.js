@@ -2,6 +2,7 @@ const nodes = document.querySelectorAll(".node[data-target]");
 const centerNode = document.querySelector(".center-node[data-easter-egg]");
 const mindmapStage = document.querySelector(".mindmap-stage");
 const shakeNodes = document.querySelectorAll(".mindmap .node:not(.center-node)");
+const centerNodeMeta = centerNode?.querySelector(".node-meta");
 const publicationList = document.querySelector("#publication-list");
 
 nodes.forEach((node) => {
@@ -22,14 +23,25 @@ nodes.forEach((node) => {
 
 if (centerNode && mindmapStage && shakeNodes.length > 0) {
   centerNode.addEventListener("click", () => {
+    if (mindmapStage.classList.contains("is-orbiting")) {
+      return;
+    }
+
+    const originalMeta = centerNodeMeta?.textContent;
     centerNode.classList.add("is-sparking");
     mindmapStage.classList.add("is-orbiting");
     shakeNodes.forEach((node) => node.classList.add("is-shaking"));
+    if (centerNodeMeta) {
+      centerNodeMeta.textContent = "Orbital resonance activated";
+    }
 
     window.setTimeout(() => {
       centerNode.classList.remove("is-sparking");
       mindmapStage.classList.remove("is-orbiting");
       shakeNodes.forEach((node) => node.classList.remove("is-shaking"));
+      if (centerNodeMeta && originalMeta) {
+        centerNodeMeta.textContent = originalMeta;
+      }
     }, 1400);
   });
 }
