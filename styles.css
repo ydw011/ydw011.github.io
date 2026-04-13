@@ -168,6 +168,22 @@ h2 {
   height: 100%;
 }
 
+.rocket-easter-egg {
+  position: absolute;
+  left: 50%;
+  top: 54%;
+  width: 92px;
+  transform: translate(-50%, -50%) scale(0.2);
+  opacity: 0;
+  pointer-events: none;
+  z-index: 1;
+  filter: drop-shadow(0 0 18px rgba(140, 228, 255, 0.24));
+}
+
+.rocket-easter-egg.is-launching {
+  animation: rocketLaunch 1.35s ease-in forwards;
+}
+
 .mindmap-links path {
   fill: none;
   stroke: rgba(220, 234, 255, 0.55);
@@ -695,6 +711,33 @@ h2 {
   50% {
     stroke-width: 4;
     filter: drop-shadow(0 0 16px rgba(140, 228, 255, 0.45));
+  }
+}
+
+@keyframes rocketLaunch {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -20%) scale(0.18) rotate(0deg);
+  }
+
+  10% {
+    opacity: 1;
+    transform: translate(-50%, -55%) scale(0.74) rotate(0deg);
+  }
+
+  35% {
+    opacity: 1;
+    transform: translate(-50%, -145%) scale(0.9) rotate(-2deg);
+  }
+
+  70% {
+    opacity: 1;
+    transform: translate(-50%, -290%) scale(1) rotate(2deg);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -470%) scale(1.08) rotate(3deg);
   }
 }
 

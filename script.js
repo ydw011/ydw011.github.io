@@ -3,6 +3,7 @@ const centerNode = document.querySelector(".center-node[data-easter-egg]");
 const mindmapStage = document.querySelector(".mindmap-stage");
 const shakeNodes = document.querySelectorAll(".mindmap .node:not(.center-node)");
 const centerNodeMeta = centerNode?.querySelector(".node-meta");
+const rocketEasterEgg = document.querySelector("#rocket-easter-egg");
 const publicationList = document.querySelector("#publication-list");
 
 nodes.forEach((node) => {
@@ -31,6 +32,7 @@ if (centerNode && mindmapStage && shakeNodes.length > 0) {
     centerNode.classList.add("is-sparking");
     mindmapStage.classList.add("is-orbiting");
     shakeNodes.forEach((node) => node.classList.add("is-shaking"));
+    rocketEasterEgg?.classList.add("is-launching");
     if (centerNodeMeta) {
       centerNodeMeta.textContent = "Orbital resonance activated";
     }
@@ -39,6 +41,7 @@ if (centerNode && mindmapStage && shakeNodes.length > 0) {
       centerNode.classList.remove("is-sparking");
       mindmapStage.classList.remove("is-orbiting");
       shakeNodes.forEach((node) => node.classList.remove("is-shaking"));
+      rocketEasterEgg?.classList.remove("is-launching");
       if (centerNodeMeta && originalMeta) {
         centerNodeMeta.textContent = originalMeta;
       }
