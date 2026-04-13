@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DongWook Yang | Mind Map Portfolio</title>
+  <meta
+    name="description"
+    content="A mind-map style portfolio for DongWook Yang featuring research, projects, hobbies, social links, and personal journey."
+  >
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Cormorant+Garamond:wght@600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="home-body">
+  <div class="page-shell">
+    <header class="hero-copy">
+      <p class="eyebrow">Portfolio Universe</p>
+      <h1>Ideas, work, and identity connected like a living map.</h1>
+      <p class="hero-text">
+        Explore DongWook Yang through a branching mind map. Each node opens a different part of the story:
+        research, projects, hobbies, social presence, and the journey that ties them together.
+      </p>
+    </header>
+
+    <main class="mindmap-stage" aria-label="Mind map navigation">
+      <svg class="mindmap-links" viewBox="0 0 1200 900" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M600 450 C520 270, 350 200, 230 170"></path>
+        <path d="M600 450 C760 250, 920 240, 1010 170"></path>
+        <path d="M600 450 C830 410, 980 470, 1040 560"></path>
+        <path d="M600 450 C460 670, 290 700, 220 760"></path>
+        <path d="M600 450 C650 690, 760 740, 850 760"></path>
+      </svg>
+
+      <section class="mindmap">
+        <button class="node center-node" type="button" data-target="journey.html" style="--x: 50%; --y: 50%;">
+          <span class="node-label">DongWook Yang</span>
+          <span class="node-meta">Curious builder and researcher</span>
+        </button>
+
+        <button class="node node-research" type="button" data-target="research.html" style="--x: 18%; --y: 16%;">
+          <span class="node-label">Research</span>
+          <span class="node-meta">Questions, experiments, insight</span>
+        </button>
+
+        <button class="node node-projects" type="button" data-target="projects.html" style="--x: 82%; --y: 16%;">
+          <span class="node-label">Projects</span>
+          <span class="node-meta">Things I design and build</span>
+        </button>
+
+        <button class="node node-social" type="button" data-target="social.html" style="--x: 87%; --y: 62%;">
+          <span class="node-label">Social</span>
+          <span class="node-meta">Where to find me online</span>
+        </button>
+
+        <button class="node node-hobbies" type="button" data-target="hobbies.html" style="--x: 17%; --y: 82%;">
+          <span class="node-label">Hobbies</span>
+          <span class="node-meta">Energy outside of work</span>
+        </button>
+
+        <button class="node node-journey" type="button" data-target="journey.html" style="--x: 72%; --y: 82%;">
+          <span class="node-label">Journey</span>
+          <span class="node-meta">Values, growth, direction</span>
+        </button>
+      </section>
+    </main>
+
+    <footer class="home-footer">
+      <p>Click any connected node to zoom into that part of the portfolio.</p>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
