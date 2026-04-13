@@ -4,6 +4,7 @@ const guestbookList = document.querySelector("#guestbook-list");
 const guestbookStatus = document.querySelector("#guestbook-status");
 const guestbookClear = document.querySelector("#guestbook-clear");
 const storageKey = "dw-portfolio-guestbook";
+const guestbookAdminPassword = "20255225";
 
 nodes.forEach((node) => {
   node.addEventListener("click", () => {
@@ -105,6 +106,18 @@ if (guestbookForm && guestbookList && guestbookStatus && guestbookClear) {
   });
 
   guestbookClear.addEventListener("click", () => {
+    const enteredPassword = window.prompt("Enter admin password to clear notes.");
+
+    if (enteredPassword === null) {
+      guestbookStatus.textContent = "Clear action was cancelled.";
+      return;
+    }
+
+    if (enteredPassword !== guestbookAdminPassword) {
+      guestbookStatus.textContent = "Incorrect password. Notes were not cleared.";
+      return;
+    }
+
     window.localStorage.removeItem(storageKey);
     renderGuestbookEntries();
     guestbookStatus.textContent = "Local notes were cleared.";
