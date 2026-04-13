@@ -168,16 +168,16 @@ h2 {
   height: 100%;
 }
 
-.moon-decor {
-  position: absolute;
+.moon-decor-global {
+  position: fixed;
   top: 18px;
   right: 18px;
-  width: min(220px, 22vw);
-  min-width: 120px;
-  opacity: 0.94;
+  width: min(260px, 24vw);
+  min-width: 130px;
+  opacity: 0.96;
   pointer-events: none;
-  z-index: 1;
-  filter: drop-shadow(0 0 30px rgba(230, 238, 255, 0.18));
+  z-index: 0;
+  filter: drop-shadow(0 0 36px rgba(230, 238, 255, 0.22));
 }
 
 .rocket-easter-egg {
@@ -185,11 +185,12 @@ h2 {
   left: 50%;
   top: 54%;
   width: 92px;
-  transform: translate(-50%, -50%) scale(0.2);
+  transform: translate(-50%, -50%) scale(0.2) rotate(0deg);
   opacity: 0;
   pointer-events: none;
   z-index: 2;
   filter: drop-shadow(0 0 18px rgba(140, 228, 255, 0.24));
+  transform-origin: 50% 70%;
 }
 
 .rocket-easter-egg.is-launching {
@@ -730,27 +731,32 @@ h2 {
 @keyframes rocketLaunch {
   0% {
     opacity: 0;
-    transform: translate(-50%, -12%) scale(0.2) rotate(-6deg);
+    transform: translate(-50%, -4%) scale(0.18) rotate(0deg);
   }
 
-  10% {
+  8% {
     opacity: 1;
-    transform: translate(-48%, -48%) scale(0.72) rotate(-10deg);
+    transform: translate(-50%, -40%) scale(0.66) rotate(0deg);
   }
 
-  35% {
+  24% {
     opacity: 1;
-    transform: translate(-26%, -170%) scale(0.86) rotate(-22deg);
+    transform: translate(-44%, -125%) scale(0.78) rotate(-4deg);
   }
 
-  70% {
+  48% {
     opacity: 1;
-    transform: translate(36%, -285%) scale(0.92) rotate(-32deg);
+    transform: translate(-18%, -220%) scale(0.86) rotate(-9deg);
+  }
+
+  72% {
+    opacity: 1;
+    transform: translate(26%, -315%) scale(0.92) rotate(-14deg);
   }
 
   100% {
     opacity: 0;
-    transform: translate(102%, -390%) scale(0.98) rotate(-38deg);
+    transform: translate(82%, -405%) scale(0.98) rotate(-18deg);
   }
 }
 
@@ -811,7 +817,7 @@ h2 {
     display: none;
   }
 
-  .moon-decor {
+  .moon-decor-global {
     width: min(150px, 28vw);
     top: 14px;
     right: 14px;
