@@ -1,4 +1,4 @@
-const ASSET_VERSION = "18";
+const ASSET_VERSION = "20";
 
 const styleLink = document.createElement("link");
 styleLink.rel = "stylesheet";
