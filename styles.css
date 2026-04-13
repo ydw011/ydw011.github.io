@@ -56,7 +56,21 @@ body::before {
     radial-gradient(circle at 18% 88%, rgba(255, 255, 255, 0.72) 0 1px, transparent 1.8px),
     radial-gradient(circle at 44% 82%, rgba(255, 255, 255, 0.78) 0 1px, transparent 1.8px),
     radial-gradient(circle at 66% 86%, rgba(255, 255, 255, 0.74) 0 1px, transparent 1.8px),
-    radial-gradient(circle at 84% 62%, rgba(255, 255, 255, 0.82) 0 1px, transparent 1.8px);
+    radial-gradient(circle at 84% 62%, rgba(255, 255, 255, 0.82) 0 1px, transparent 1.8px),
+    radial-gradient(circle at 6% 10%, rgba(255, 255, 255, 0.72) 0 0.9px, transparent 1.6px),
+    radial-gradient(circle at 12% 58%, rgba(255, 255, 255, 0.76) 0 0.9px, transparent 1.6px),
+    radial-gradient(circle at 22% 34%, rgba(255, 255, 255, 0.8) 0 0.9px, transparent 1.6px),
+    radial-gradient(circle at 28% 90%, rgba(255, 255, 255, 0.7) 0 0.9px, transparent 1.6px),
+    radial-gradient(circle at 38% 52%, rgba(255, 255, 255, 0.82) 0 0.9px, transparent 1.6px),
+    radial-gradient(circle at 42% 8%, rgba(255, 255, 255, 0.74) 0 0.9px, transparent 1.6px),
+    radial-gradient(circle at 52% 40%, rgba(255, 255, 255, 0.78) 0 0.9px, transparent 1.6px),
+    radial-gradient(circle at 56% 92%, rgba(255, 255, 255, 0.72) 0 0.9px, transparent 1.6px),
+    radial-gradient(circle at 64% 54%, rgba(255, 255, 255, 0.76) 0 0.9px, transparent 1.6px),
+    radial-gradient(circle at 70% 8%, rgba(255, 255, 255, 0.82) 0 0.9px, transparent 1.6px),
+    radial-gradient(circle at 78% 48%, rgba(255, 255, 255, 0.74) 0 0.9px, transparent 1.6px),
+    radial-gradient(circle at 86% 8%, rgba(255, 255, 255, 0.8) 0 0.9px, transparent 1.6px),
+    radial-gradient(circle at 94% 44%, rgba(255, 255, 255, 0.76) 0 0.9px, transparent 1.6px),
+    radial-gradient(circle at 96% 74%, rgba(255, 255, 255, 0.72) 0 0.9px, transparent 1.6px);
   opacity: 0.96;
 }
 
@@ -77,6 +91,37 @@ body::after {
 .detail-shell {
   position: relative;
   z-index: 1;
+}
+
+.page-shell::before,
+.page-shell::after,
+.detail-shell::before,
+.detail-shell::after {
+  content: "";
+  position: fixed;
+  inset: auto;
+  pointer-events: none;
+  z-index: 0;
+  width: 180px;
+  height: 2px;
+  opacity: 0;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0), rgba(220, 240, 255, 0.95), rgba(255, 255, 255, 0));
+  box-shadow: 0 0 14px rgba(180, 220, 255, 0.42);
+  transform: rotate(-28deg);
+}
+
+.page-shell::before,
+.detail-shell::before {
+  top: 16%;
+  left: 58%;
+  animation: shootingStarOne 15s linear infinite;
+}
+
+.page-shell::after,
+.detail-shell::after {
+  top: 28%;
+  left: 18%;
+  animation: shootingStarTwo 21s linear infinite;
 }
 
 .home-body {
@@ -770,6 +815,50 @@ h2 {
   100% {
     opacity: 0;
     transform: translate(-50%, -470%) scale(1) rotate(0deg);
+  }
+}
+
+@keyframes shootingStarOne {
+  0%, 82%, 100% {
+    opacity: 0;
+    transform: translate3d(0, 0, 0) rotate(-28deg) scaleX(0.65);
+  }
+
+  84% {
+    opacity: 0.95;
+    transform: translate3d(0, 0, 0) rotate(-28deg) scaleX(0.9);
+  }
+
+  92% {
+    opacity: 0.9;
+    transform: translate3d(-220px, 170px, 0) rotate(-28deg) scaleX(1.05);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translate3d(-340px, 260px, 0) rotate(-28deg) scaleX(0.7);
+  }
+}
+
+@keyframes shootingStarTwo {
+  0%, 90%, 100% {
+    opacity: 0;
+    transform: translate3d(0, 0, 0) rotate(-32deg) scaleX(0.6);
+  }
+
+  91% {
+    opacity: 0.9;
+    transform: translate3d(0, 0, 0) rotate(-32deg) scaleX(0.9);
+  }
+
+  96% {
+    opacity: 0.78;
+    transform: translate3d(250px, 180px, 0) rotate(-32deg) scaleX(1.02);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translate3d(380px, 280px, 0) rotate(-32deg) scaleX(0.7);
   }
 }
 
