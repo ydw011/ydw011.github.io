@@ -209,6 +209,10 @@ h2 {
   transform: translate(-50%, -50%) scale(1.22);
 }
 
+.node.is-shaking {
+  animation: nodeShake 720ms ease-in-out 2;
+}
+
 .node-label {
   display: block;
   font-size: 1.15rem;
@@ -243,6 +247,10 @@ h2 {
   font-size: clamp(1.45rem, 3vw, 2rem);
 }
 
+.center-node.is-sparking {
+  animation: centerPulse 1.2s ease;
+}
+
 .node-research {
   background: linear-gradient(145deg, rgba(140, 228, 255, 0.18), rgba(8, 14, 26, 0.92));
 }
@@ -265,6 +273,14 @@ h2 {
 
 .node-talk {
   background: linear-gradient(145deg, rgba(215, 193, 140, 0.14), rgba(14, 18, 32, 0.94));
+}
+
+.mindmap-stage.is-orbiting::before {
+  animation: cloudPulse 1.2s ease;
+}
+
+.mindmap-stage.is-orbiting::after {
+  animation: cloudPulse 1.2s ease reverse;
 }
 
 .home-footer {
@@ -575,6 +591,58 @@ h2 {
 @keyframes dashFlow {
   to {
     stroke-dashoffset: -240;
+  }
+}
+
+@keyframes nodeShake {
+  0%, 100% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+
+  20% {
+    transform: translate(calc(-50% - 4px), calc(-50% + 2px)) rotate(-2deg);
+  }
+
+  40% {
+    transform: translate(calc(-50% + 5px), calc(-50% - 3px)) rotate(2deg);
+  }
+
+  60% {
+    transform: translate(calc(-50% - 3px), calc(-50% + 4px)) rotate(-1.5deg);
+  }
+
+  80% {
+    transform: translate(calc(-50% + 4px), calc(-50% - 2px)) rotate(1deg);
+  }
+}
+
+@keyframes centerPulse {
+  0%, 100% {
+    transform: translate(-50%, -50%) scale(1);
+    box-shadow:
+      0 0 0 1px rgba(255, 255, 255, 0.05),
+      0 0 40px rgba(138, 180, 255, 0.18),
+      0 24px 48px rgba(0, 0, 0, 0.38);
+  }
+
+  50% {
+    transform: translate(-50%, -50%) scale(1.08);
+    box-shadow:
+      0 0 0 1px rgba(255, 255, 255, 0.08),
+      0 0 70px rgba(140, 228, 255, 0.28),
+      0 24px 48px rgba(0, 0, 0, 0.42);
+  }
+}
+
+@keyframes cloudPulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.6;
+    transform: scale(1.12);
   }
 }
 

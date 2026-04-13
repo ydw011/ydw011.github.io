@@ -1,4 +1,7 @@
 const nodes = document.querySelectorAll(".node[data-target]");
+const centerNode = document.querySelector(".center-node[data-easter-egg]");
+const mindmapStage = document.querySelector(".mindmap-stage");
+const shakeNodes = document.querySelectorAll(".mindmap .node:not(.center-node)");
 const publicationList = document.querySelector("#publication-list");
 
 nodes.forEach((node) => {
@@ -16,6 +19,20 @@ nodes.forEach((node) => {
     }, 260);
   });
 });
+
+if (centerNode && mindmapStage && shakeNodes.length > 0) {
+  centerNode.addEventListener("click", () => {
+    centerNode.classList.add("is-sparking");
+    mindmapStage.classList.add("is-orbiting");
+    shakeNodes.forEach((node) => node.classList.add("is-shaking"));
+
+    window.setTimeout(() => {
+      centerNode.classList.remove("is-sparking");
+      mindmapStage.classList.remove("is-orbiting");
+      shakeNodes.forEach((node) => node.classList.remove("is-shaking"));
+    }, 1400);
+  });
+}
 
 if (publicationList) {
   fetch("publications.json")
