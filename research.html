@@ -7,12 +7,22 @@
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Cormorant+Garamond:wght@600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
   <script src="asset-loader.js"></script>
 </head>
 <body class="detail-body">
   <div class="detail-shell">
     <a class="back-link" href="index.html">Back to mind map</a>
+    <a class="icon-link scholar-link" href="https://scholar.google.com/citations?user=3fk-jnwAAAAJ&hl=ko" target="_blank" rel="noreferrer" aria-label="Open Google Scholar profile">
+      <span class="icon-mark icon-scholar">
+        <svg viewBox="0 0 64 64" aria-hidden="true">
+          <path d="M32 10 8 24l24 14 19-11.08V44h5V24L32 10Z" fill="currentColor"/>
+          <path d="M19 35v7c0 6.08 8.06 11 18 11s18-4.92 18-11v-7L32 48 19 35Z" fill="currentColor" opacity=".8"/>
+        </svg>
+      </span>
+      <span>Google Scholar</span>
+    </a>
+
     <section class="detail-hero">
       <p class="eyebrow">Research</p>
       <h1>Exploring space robotics through origami-inspired thinking.</h1>
@@ -22,19 +32,40 @@
       </p>
     </section>
 
-    <section class="card-grid">
-      <article class="detail-card">
+    <section class="research-stack">
+      <article class="detail-card focus-card">
         <h2>Focus Areas</h2>
-        <p>Space robotics, deployable mechanisms, origami-inspired structures, and practical experimentation.</p>
+        <p>
+          Add your main research themes here. For example: space robotics, deployable mechanisms,
+          origami-inspired structures, compliant systems, and practical experimentation.
+        </p>
       </article>
-      <article class="detail-card">
-        <h2>How I Work</h2>
-        <p>I move from geometric ideas to physical behavior, testing how concepts can become reliable systems.</p>
-      </article>
-      <article class="detail-card">
-        <h2>What I Value</h2>
-        <p>Clear reasoning, elegant form, and research that connects theory with usable engineering outcomes.</p>
-      </article>
+
+      <section class="publication-section" aria-labelledby="publication-title">
+        <div class="section-heading">
+          <p class="eyebrow">Publications</p>
+          <h2 id="publication-title">Paper List</h2>
+        </div>
+
+        <article class="publication-card">
+          <p class="publication-status">Add New Paper Here</p>
+          <h3>Paper Title Placeholder</h3>
+          <p class="publication-meta">Author list - Conference or Journal - Year</p>
+          <p class="publication-summary">
+            Replace this card with your actual publication information. You can duplicate this block downward
+            as you add more papers.
+          </p>
+        </article>
+
+        <article class="publication-card">
+          <p class="publication-status">Add New Paper Here</p>
+          <h3>Another Paper Placeholder</h3>
+          <p class="publication-meta">Author list - Venue - Year</p>
+          <p class="publication-summary">
+            Keep stacking additional paper cards in this section so the publication list can continue downward over time.
+          </p>
+        </article>
+      </section>
     </section>
   </div>
 </body>
