@@ -446,9 +446,9 @@ h2 {
   width: 58px;
   height: 58px;
   border-radius: 18px;
-  border: 1px solid rgba(189, 214, 255, 0.18);
-  background: linear-gradient(180deg, rgba(11, 18, 31, 0.92), rgba(8, 13, 24, 0.82));
-  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.24);
+  border: 1px solid rgba(255, 255, 255, 0.72);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(241, 246, 255, 0.96));
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.18);
 }
 
 .icon-mark svg {
