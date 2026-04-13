@@ -84,25 +84,6 @@ body::after {
   max-width: 760px;
 }
 
-.hero-jump {
-  display: inline-flex;
-  align-items: center;
-  margin-top: 20px;
-  padding: 10px 16px;
-  border-radius: 999px;
-  border: 1px solid rgba(140, 228, 255, 0.3);
-  color: var(--text);
-  text-decoration: none;
-  background: rgba(255, 255, 255, 0.04);
-}
-
-.hero-jump:hover,
-.hero-jump:focus-visible {
-  outline: none;
-  border-color: rgba(140, 228, 255, 0.55);
-  background: rgba(140, 228, 255, 0.08);
-}
-
 .eyebrow {
   margin: 0 0 10px;
   letter-spacing: 0.18em;
@@ -280,6 +261,10 @@ h2 {
 
 .node-journey {
   background: linear-gradient(145deg, rgba(140, 228, 255, 0.15), rgba(8, 14, 26, 0.92));
+}
+
+.node-talk {
+  background: linear-gradient(145deg, rgba(215, 193, 140, 0.14), rgba(14, 18, 32, 0.94));
 }
 
 .home-footer {
@@ -466,32 +451,37 @@ h2 {
 
   .center-node {
     --x: 50% !important;
-    --y: 16% !important;
+    --y: 12% !important;
   }
 
   .node-research {
     --x: 50% !important;
-    --y: 34% !important;
+    --y: 26% !important;
   }
 
   .node-projects {
     --x: 50% !important;
-    --y: 50% !important;
+    --y: 40% !important;
   }
 
   .node-social {
     --x: 50% !important;
-    --y: 66% !important;
+    --y: 54% !important;
   }
 
   .node-hobbies {
     --x: 50% !important;
-    --y: 82% !important;
+    --y: 68% !important;
   }
 
   .node-journey {
     --x: 50% !important;
-    --y: 92% !important;
+    --y: 82% !important;
+  }
+
+  .node-talk {
+    --x: 50% !important;
+    --y: 94% !important;
   }
 
   .home-footer {
