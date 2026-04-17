@@ -798,6 +798,28 @@ h2 {
   font-family: "Space Grotesk", sans-serif;
 }
 
+.info-card-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 14px;
+}
+
+.info-card-head h2 {
+  margin-bottom: 0;
+}
+
+.info-logo-link {
+  width: 56px;
+  height: 56px;
+}
+
+.arml-logo-icon {
+  width: 32px;
+  height: 32px;
+}
+
 .about-name-block h2 {
   font-size: 1.5rem;
 }

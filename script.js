@@ -6,6 +6,8 @@ const centerNodeMeta = centerNode?.querySelector(".node-meta");
 const rocketEasterEgg = document.querySelector("#rocket-easter-egg");
 const publicationList = document.querySelector("#publication-list");
 const projectList = document.querySelector("#project-list");
+const aboutEducationLines = document.querySelector("#about-education-lines");
+const aboutCareerLines = document.querySelector("#about-career-lines");
 
 nodes.forEach((node) => {
   node.addEventListener("click", () => {
@@ -162,6 +164,43 @@ if (projectList) {
         </article>
       `;
     });
+}
+
+if (aboutEducationLines || aboutCareerLines) {
+  fetch("aboutinfo.json")
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error("Failed to load about data.");
+      }
+
+      return response.json();
+    })
+    .then((aboutInfo) => {
+      if (aboutEducationLines) {
+        aboutEducationLines.innerHTML = renderLineBreakText(aboutInfo.education, "Add your education lines in aboutinfo.json");
+      }
+
+      if (aboutCareerLines) {
+        aboutCareerLines.innerHTML = renderLineBreakText(aboutInfo.career, "Add your career lines in aboutinfo.json");
+      }
+    })
+    .catch(() => {
+      if (aboutEducationLines) {
+        aboutEducationLines.textContent = "Education data could not be loaded.";
+      }
+
+      if (aboutCareerLines) {
+        aboutCareerLines.textContent = "Career data could not be loaded.";
+      }
+    });
+}
+
+function renderLineBreakText(lines, fallbackText) {
+  if (!Array.isArray(lines) || lines.length === 0) {
+    return escapeHtml(fallbackText);
+  }
+
+  return lines.map((line) => escapeHtml(line)).join("<br>");
 }
 
 function escapeHtml(value) {
