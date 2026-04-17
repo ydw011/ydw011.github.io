@@ -256,7 +256,7 @@ h2 {
 
 .moon-decor-global {
   position: fixed;
-  top: 14%;
+  top: 10%;
   left: 50%;
   width: min(190px, 18vw);
   min-width: 100px;
@@ -1197,7 +1197,7 @@ h2 {
 
   .moon-decor-global {
     width: min(120px, 24vw);
-    top: 12%;
+    top: 9%;
   }
 
   .center-node {
