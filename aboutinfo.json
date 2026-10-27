@@ -1,10 +1,20 @@
 {
   "education": [
-    "2025.02-Present : Ph.D. Student, Aerospace Engineering, KAIST",
-    "2025.02 : M.S., Aerospace Engineering, KAIST",
-    "2023.02 : B.S., Aerospace Engineering, KAIST"
+    {
+      "period": "2025.02 – Present",
+      "title": "Ph.D. Student, Aerospace Engineering",
+      "org": "KAIST"
+    },
+    {
+      "period": "2025.02",
+      "title": "M.S., Aerospace Engineering",
+      "org": "KAIST"
+    },
+    {
+      "period": "2023.02",
+      "title": "B.S., Aerospace Engineering",
+      "org": "KAIST"
+    }
   ],
-  "career": [
-    "TBD"
-  ]
+  "career": []
 }

@@ -1,30 +1,38 @@
 [
   {
-    "status": "Domestic - Coauthor",
     "title": "Advances and Trends in Space Robotics Technology Development and Research",
-    "meta": "Min Woo Oh, Dong Wook Yang, Seong Bin Lee, Gagyeong Park, So Jeong Park, Ki Hoon Lee, Taeyoung Lee, Namsuk Cho, Gyujin Shim, Jinwon Kim, Jong Tai Jang, Dae Young Lee",
-    "summary": "JKSAS - 2025",
+    "authors": "Min Woo Oh, Dong Wook Yang, Seong Bin Lee, Gagyeong Park, So Jeong Park, Ki Hoon Lee, Taeyoung Lee, Namsuk Cho, Gyujin Shim, Jinwon Kim, Jong Tai Jang, Dae Young Lee",
+    "venue": "Journal of the Korean Society for Aeronautical and Space Sciences",
+    "year": 2025,
+    "scope": "Domestic",
+    "role": "Coauthor",
     "link": "https://www.scopus.com/pages/publications/105020082313"
   },
   {
-    "status": "International - Coauthor",
     "title": "Deployable mesh reflector antenna for global navigation satellite system radio occultation within 1U CubeSat form factor",
-    "meta": "Gagyeong Park, Dong-Wook Yang, Min-Woo Oh, Jang-Soo Chae, Hyosang Yoon, Jae-Hung Han, Dae-Young Lee",
-    "summary": "AST - 2025",
+    "authors": "Gagyeong Park, Dong-Wook Yang, Min-Woo Oh, Jang-Soo Chae, Hyosang Yoon, Jae-Hung Han, Dae-Young Lee",
+    "venue": "Aerospace Science and Technology",
+    "year": 2025,
+    "scope": "International",
+    "role": "Coauthor",
     "link": "https://doi.org/10.1016/j.ast.2025.110694"
   },
   {
-    "status": "International - Coauthor",
     "title": "A compact RTK-GNSS device for high-precision localization of outdoor mobile robots",
-    "meta": "Seong Bin Lee, Bit Kim, Dong-Wook Yang, Junseo Kim, Tom Parkinson, Johsan Billingham, Chulwoo Park, Jinsung Yoon, Dae-Young Lee",
-    "summary": "JFR - 2024",
+    "authors": "Seong Bin Lee, Bit Kim, Dong-Wook Yang, Junseo Kim, Tom Parkinson, Johsan Billingham, Chulwoo Park, Jinsung Yoon, Dae-Young Lee",
+    "venue": "Journal of Field Robotics",
+    "year": 2024,
+    "scope": "International",
+    "role": "Coauthor",
     "link": "https://doi.org/10.1002/rob.22317"
   },
   {
-    "status": "International - Lead Author",
     "title": "Torsion-Induced Compliant Joints and its Application to Flat-Foldable and Self-Assembling Robotic Arm",
-    "meta": "Dong-Wook Yang, Hyun-Su Park, Keon-Ik Jang, Jae-Hung Han, Dae-Young Lee",
-    "summary": "IEEE RAL - 2024",
+    "authors": "Dong-Wook Yang, Hyun-Su Park, Keon-Ik Jang, Jae-Hung Han, Dae-Young Lee",
+    "venue": "IEEE Robotics and Automation Letters",
+    "year": 2024,
+    "scope": "International",
+    "role": "Lead Author",
     "link": "https://ieeexplore.ieee.org/abstract/document/10268054"
   }
 ]

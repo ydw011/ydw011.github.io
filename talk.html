@@ -3,51 +3,74 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-  <meta http-equiv="Pragma" content="no-cache">
-  <meta http-equiv="Expires" content="0">
   <title>Ask Me Anything | DongWook Yang</title>
+  <meta name="description" content="A shared guestbook where visitors can sign in with GitHub and leave a note for DongWook Yang.">
   <link rel="icon" type="image/svg+xml" href="image/favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
-  <script src="asset-loader.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <script>
+    document.documentElement.classList.add("js");
+    try {
+      const savedTheme = localStorage.getItem("theme");
+      if (savedTheme) document.documentElement.dataset.theme = savedTheme;
+    } catch (error) {}
+  </script>
+  <link rel="stylesheet" href="styles.css?v=41">
+  <script src="script.js?v=41" defer></script>
 </head>
-<body class="detail-body">
-  <span class="shooting-star shooting-star-a" aria-hidden="true"></span>
-  <span class="shooting-star shooting-star-b" aria-hidden="true"></span>
-  <div class="detail-shell">
-    <a class="back-link" href="index.html">Back to main page</a>
-    <section class="detail-hero">
-      <p class="eyebrow">Talk Space</p>
-      <h1>Ask Me Anything.</h1>
-      <p>
-        Visitors can sign in with GitHub, leave a note, and read what others have written here.
-      </p>
-    </section>
+<body>
+  <svg class="icon-sprite" aria-hidden="true">
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" d="M7 17 17 7M8 7h9v9"/></symbol>
+    <symbol id="i-sun" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></g></symbol>
+    <symbol id="i-moon" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></symbol>
+  </svg>
 
-    <section class="talk-panel" aria-labelledby="talk-thread-title">
-      <div class="talk-intro">
-        <p class="eyebrow">How It Works</p>
-        <h2 id="talk-thread-title">Sign in with GitHub and leave a message below.</h2>
-        <p class="talk-note">
-          This space is shared, so messages written here can be seen by other visitors too. If the thread takes a
-          moment to appear, give it a second to load.
-        </p>
-      </div>
+  <header class="site-header">
+    <nav class="nav container" aria-label="Primary">
+      <a class="nav-brand" href="index.html">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span class="nav-brand-name">DongWook Yang</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#research">Research</a></li>
+        <li><a href="index.html#projects">Projects</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+      <button class="theme-toggle" type="button" aria-label="Switch color theme">
+        <svg class="icon icon-sun"><use href="#i-sun"></use></svg>
+        <svg class="icon icon-moon"><use href="#i-moon"></use></svg>
+      </button>
+    </nav>
+  </header>
 
-      <div class="talk-thread-wrap">
-        <script
-          src="https://utteranc.es/client.js"
-          repo="ydw011/ydw011.github.io"
-          issue-term="pathname"
-          label="guestbook"
-          theme="github-dark"
-          crossorigin="anonymous"
-          async
-        ></script>
-      </div>
-    </section>
-  </div>
+  <main class="talk-page container">
+    <a class="text-link back-link" href="index.html#contact">
+      <svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg>Back to main page
+    </a>
+
+    <p class="kicker reveal"><span class="kicker-dot" aria-hidden="true"></span>Guestbook</p>
+    <h1 class="talk-title reveal">Ask Me Anything.</h1>
+    <p class="talk-lead reveal">
+      Questions about research, space robotics, or anything else. This space is shared, so messages written here
+      can be read by other visitors too.
+    </p>
+
+    <ol class="talk-steps reveal">
+      <li>Sign in with your GitHub account.</li>
+      <li>Write your question or note below.</li>
+      <li>Replies show up in the same thread.</li>
+    </ol>
+
+    <div class="talk-thread reveal" id="talk-thread"></div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span data-year>2026</span> DongWook Yang</p>
+      <p class="footer-quote"><q>Magnificent desolation.</q> — Buzz Aldrin</p>
+    </div>
+  </footer>
 </body>
 </html>
