@@ -172,7 +172,7 @@ function renderPublication(publication) {
   );
   const venue = escapeHtml(publication.venue || "");
   const year = escapeHtml(publication.year || "");
-  const link = typeof publication.link === "string" ? publication.link.trim() : "";
+  const link = safeUrl(publication.link);
   const isLead = /lead|first/i.test(publication.role || "");
 
   const tags = [
@@ -224,8 +224,8 @@ function renderProject(project) {
   const title = escapeHtml(project.title || "Untitled project");
   const period = escapeHtml(project.period || "");
   const summary = escapeHtml(project.summary || "");
-  const link = typeof project.link === "string" ? project.link.trim() : "";
-  const image = typeof project.image === "string" ? project.image.trim() : "";
+  const link = safeUrl(project.link);
+  const image = safeUrl(project.image);
   const tags = Array.isArray(project.tags)
     ? project.tags.map((tag) => `<span class="tag">${escapeHtml(tag)}</span>`).join("")
     : "";
@@ -316,6 +316,21 @@ if (talkThread) {
   utterances.setAttribute("label", "guestbook");
   utterances.setAttribute("theme", utterancesTheme());
   talkThread.appendChild(utterances);
+}
+
+// Only http(s) URLs (absolute or relative to this site) are allowed, so a link like
+// "javascript:..." in the JSON files can never run code when clicked.
+function safeUrl(value) {
+  if (typeof value !== "string" || value.trim() === "") {
+    return "";
+  }
+
+  try {
+    const url = new URL(value.trim(), window.location.href);
+    return url.protocol === "https:" || url.protocol === "http:" ? value.trim() : "";
+  } catch (error) {
+    return "";
+  }
 }
 
 function escapeHtml(value) {

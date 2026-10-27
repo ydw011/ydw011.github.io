@@ -49,7 +49,7 @@ Most updates only need a JSON edit — no HTML changes.
 
 ## Cache busting
 
-`index.html` and `talk.html` load `styles.css?v=41` and `script.js?v=41`. Bump the number in both files after changing CSS or JS so visitors get the new version.
+`index.html` and `talk.html` load `styles.css?v=42` and `script.js?v=42`. Bump the number in both files after changing CSS or JS so visitors get the new version.
 
 ## Local preview
 
